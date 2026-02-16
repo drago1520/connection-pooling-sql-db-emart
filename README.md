@@ -1,6 +1,7 @@
 # Should I use a Client side connection pooler?
 **P.S.: The further away the DB from the app, the more a connection pooler matters. Opening a TCP connection to localhost, as in my test, happens instantly, whereas a remote database will take a round-trip. I must test with a remote database like a real app.**
-Don't matter.
+
+Don't matter for localhost.
 Practically, with or without pool it don't matter. The majority of the latency comes from the query itself - DB execution & rows parsing or whatever.
 
 It helps long living processes like API servers keep open connections with the DB.
